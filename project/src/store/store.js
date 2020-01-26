@@ -11,9 +11,17 @@ export default new Vuex.Store({
         socketMessage:'',
         fname:'',
         lname:'',
+        mname:'',
         course:'',
+        year:'',
+        gender:'',
+        date:'',
+        daterel:'',
+        prc:'',
         xray:'',
-        drug:''
+        drug:'',
+        stdnum:''
+
       },
       mutations: {
         // change(state, flavor) {
@@ -24,13 +32,24 @@ export default new Vuex.Store({
           console.log(state.socketMessage); /* eslint-disable-line no-console */
           
         },
-        setStudentInfo(state,data){
-          state.fname = data[0],
-          state.lname = data[1],
-          state.course = data[2],
-          state.xray = data[3],
-          state.drug = data[4]
+        setInfo(state,data){
+          console.log(data); /* eslint-disable-line no-console */
+          state.fname = data["firstname"],
+          state.lname = data["lastname"],
+          state.course = data["course"],
+          state.year = data["year"],
+          state.gender = data["gender"],
+          state.date = data["date"],
+          state.daterel = data["daterel"],
+          state.prc = data["prc"],
+          state.xray = data["xray"],
+          state.drug = data["drug"]
+          state.stdnum = data["stdnum"]
 
+        },
+        doNotning({state},data){
+          state.stdnum = data;
+          console.log(data); /* eslint-disable-line no-console */
         }
       },
       actions:{
@@ -42,12 +61,24 @@ export default new Vuex.Store({
           // }
         },
         socket_serverData({commit},data){
-          commit('setStudentInfo',data);
-          router.push('/student');
+          commit('setInfo',data);
+          if(data['prc'] == undefined && this.state.stdnum == ''){
+            
+            router.push('/student');
+          }else{
+            commit('setStaffInfo',data);
+            router.push('/staff');
+          }
+          
         },
         contact_server(){
           this._vm.$socket.client.emit('confirmConnection');
           console.log("contact_server"); /* eslint-disable-line no-console */
+        },
+        find_id({commit},id){
+          this._vm.$socket.client.emit('findid',id);
+          commit("doNotning",id);
+          // console.log(id); /* eslint-disable-line no-console */
         }
       },
       getters: {

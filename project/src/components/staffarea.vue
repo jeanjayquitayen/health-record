@@ -7,28 +7,14 @@
                     <v-container>
                         <v-row>
                         <v-col cols="5">
-                                First Name
+                                Staff Name
                                 <v-text-field :label="firstname" single-line outlined readonly></v-text-field>
+                        </v-col>
+                        <v-col cols="5">
+                            Search
+                            <v-text-field v-model="idnum" v-on:keyup.enter="findID" single-line outlined></v-text-field>
+                        </v-col>
 
-                        </v-col>
-                        <v-col cols="5">
-                                Last Name
-                                <v-text-field :label="lastname" single-line outlined readonly></v-text-field>
-
-                        </v-col>
-                        <v-col cols="5">
-                                Course
-                                <v-text-field :label="course" single-line outlined readonly></v-text-field>
-
-                        </v-col>
-                        <v-col cols="5">
-                                X-Ray
-                                <v-text-field :label="xray" single-line outlined readonly></v-text-field>
-                        </v-col>
-                        <v-col cols="5">
-                                Drug Test
-                                <v-text-field :label="drug" single-line outlined readonly></v-text-field>
-                        </v-col>
                         </v-row>
 
                     </v-container>
@@ -61,14 +47,21 @@ export default {
           'space-between',
         ],
         justify: 'center',
+        idnum: ''
   }),
 
   props:{
-      firstname: String,
-      lastname: String,
-      course: String,
-      xray: String,
-      drug: String
-  }
+         firstname: String,
+    //   lastname: String,
+    //   course: String,
+    //   xray: String,
+    //   drug: String
+  },
+    methods: {
+        findID(){
+            // console.log(this.idnum); /* eslint-disable-line no-console */
+            this.$store.dispatch('find_id',this.idnum);
+        }
+    }
 };
 </script>
