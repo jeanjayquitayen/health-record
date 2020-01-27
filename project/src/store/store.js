@@ -20,7 +20,11 @@ export default new Vuex.Store({
         prc:'',
         xray:'',
         drug:'',
-        stdnum:''
+        stdnum:'',
+        urinalysis:'',
+        bloodtyping:'',
+        HBSag:''
+
 
       },
       mutations: {
@@ -43,8 +47,11 @@ export default new Vuex.Store({
           state.daterel = data["daterel"],
           state.prc = data["prc"],
           state.xray = data["xray"],
-          state.drug = data["drug"]
-          state.stdnum = data["stdnum"]
+          state.drug = data["drug"],
+          state.stdnum = data["stdnum"],
+          state.bloodtyping = data["boodtyping"],
+          state.urinalysis = data["urinalysis"],
+          state.HBSag = data["HBSag"]
           
 
         },

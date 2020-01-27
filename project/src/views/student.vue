@@ -3,7 +3,10 @@
                 :lastname="lname" 
                 :course="course"
                 :xray="xray"
-                :drug="drug"></container>
+                :drug="drug"
+                :urinalysis="urinalysis"
+                :bloodtyping="bloodtyping"
+                :HBSag="HBSag"></container>
 </template>
 
 <script>
@@ -25,7 +28,10 @@ export default {
             "lname",
             "course",
             "xray",
-            "drug"
+            "drug",
+            "urinalysis",
+            "bloodtyping",
+            "HBSag"
         ])
     }
 }

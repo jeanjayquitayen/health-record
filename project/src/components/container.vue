@@ -29,6 +29,18 @@
                                 Drug Test
                                 <v-text-field :label="drug" single-line outlined readonly></v-text-field>
                         </v-col>
+                        <v-col cols="5">
+                                Urinalysis
+                                <v-text-field :label="urinalysis" single-line outlined readonly></v-text-field>
+                        </v-col>
+                         <v-col cols="5">
+                                Blood Type
+                                <v-text-field :label="bloodtyping" single-line outlined readonly></v-text-field>
+                        </v-col>
+                         <v-col cols="5">
+                                HBsAG
+                                <v-text-field :label="HBSag" single-line outlined readonly></v-text-field>
+                        </v-col>
                         </v-row>
 
                     </v-container>
@@ -68,7 +80,10 @@ export default {
       lastname: String,
       course: String,
       xray: String,
-      drug: String
+      drug: String,
+      urinalysis: String,
+      bloodtyping: String,
+      HBSag: String
   }
 };
 </script>
