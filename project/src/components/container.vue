@@ -3,48 +3,50 @@
     <v-row align="center" justify="center">
         <v-col>
             <v-card class="mx-auto" max-width="800">
-                <v-form>
                     <v-container>
-                        <v-row>
-                        <v-col cols="5">
-                                First Name
-                                <v-text-field :label="firstname" single-line outlined readonly></v-text-field>
+                        <v-row class="ma-4">
+                          <v-row>
+                            <v-col cols="4">
+                                    First Name
+                                    <v-text-field :label="firstname" single-line outlined readonly></v-text-field>
 
-                        </v-col>
-                        <v-col cols="5">
-                                Last Name
-                                <v-text-field :label="lastname" single-line outlined readonly></v-text-field>
+                            </v-col>
+                            <v-col cols="4">
+                                    Last Name
+                                    <v-text-field :label="lastname" single-line outlined readonly></v-text-field>
+                            </v-col>
+                            <v-col cols="4">
+                                    Course
+                                    <v-text-field :label="course" single-line outlined readonly></v-text-field>
 
-                        </v-col>
-                        <v-col cols="5">
-                                Course
-                                <v-text-field :label="course" single-line outlined readonly></v-text-field>
-
-                        </v-col>
-                        <v-col cols="5">
-                                X-Ray
-                                <v-text-field :label="xray" single-line outlined readonly></v-text-field>
-                        </v-col>
-                        <v-col cols="5">
-                                Drug Test
-                                <v-text-field :label="drug" single-line outlined readonly></v-text-field>
-                        </v-col>
-                        <v-col cols="5">
-                                Urinalysis
-                                <v-text-field :label="urinalysis" single-line outlined readonly></v-text-field>
-                        </v-col>
-                         <v-col cols="5">
-                                Blood Type
-                                <v-text-field :label="bloodtyping" single-line outlined readonly></v-text-field>
-                        </v-col>
-                         <v-col cols="5">
-                                HBsAG
-                                <v-text-field :label="HBSag" single-line outlined readonly></v-text-field>
-                        </v-col>
+                            </v-col>
+                          </v-row>
+                          <v-row>
+                            <v-col cols="4">
+                                    X-Ray
+                                    <v-text-field :label="xray" single-line outlined readonly></v-text-field>
+                            </v-col>
+                            <v-col cols="4">
+                                    Drug Test
+                                    <v-text-field :label="drug" single-line outlined readonly></v-text-field>
+                            </v-col>
+                            <v-col cols="4">
+                                    Urinalysis
+                                    <v-text-field :label="urinalysis" single-line outlined readonly></v-text-field>
+                            </v-col>
+                          </v-row>
+                          <v-row>
+                            <v-col cols="4">
+                                      Blood Type
+                                      <v-text-field :label="bloodtyping" single-line outlined readonly></v-text-field>
+                              </v-col>
+                              <v-col cols="4">
+                                      HBsAG
+                                      <v-text-field :label="HBSag" single-line outlined readonly></v-text-field>
+                            </v-col>
+                          </v-row>
                         </v-row>
-
                     </v-container>
-                </v-form>
             </v-card>
         </v-col>
     </v-row>
