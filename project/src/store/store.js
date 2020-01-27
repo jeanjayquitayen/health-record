@@ -44,7 +44,11 @@ export default new Vuex.Store({
           state.prc = data["prc"],
           state.xray = data["xray"],
           state.drug = data["drug"]
-          state.stdnum = data["stdnum"]
+          if(data["stdnum"] != undefined){
+            state.stdnum = data["stdnum"]
+
+          }
+          
 
         },
         doNotning({state},data){
