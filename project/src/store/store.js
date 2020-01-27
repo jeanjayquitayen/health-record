@@ -44,10 +44,7 @@ export default new Vuex.Store({
           state.prc = data["prc"],
           state.xray = data["xray"],
           state.drug = data["drug"]
-          if(data["stdnum"] != undefined){
-            state.stdnum = data["stdnum"]
-
-          }
+          state.stdnum = data["stdnum"]
           
 
         },
@@ -66,7 +63,7 @@ export default new Vuex.Store({
         },
         socket_serverData({commit},data){
           commit('setInfo',data);
-          if(data['prc'] == undefined && this.state.stdnum == ''){
+          if(data['prc'] == undefined && this.state.prc == ''){
             
             router.push('/student');
           }else{
