@@ -3,9 +3,9 @@
                 :lastname="lname" 
                 :course="course"
                 :xray="xray"
-                :drug="drug"
+                :drugtest="drug"
                 :urinalysis="urinalysis"
-                :bloodtyping="bloodtyping"
+                :bloodtest="bloodtyping"
                 :HBSag="HBSag"></container>
 </template>
 
