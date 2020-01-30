@@ -47,9 +47,9 @@ export default new Vuex.Store({
           state.daterel = data["daterel"],
           state.prc = data["prc"],
           state.xray = data["xray"],
-          state.drug = data["drug"],
+          state.drug = data["drugtest"],
           state.stdnum = data["stdnum"],
-          state.bloodtyping = data["boodtyping"],
+          state.bloodtyping = data["bloodtyping"],
           state.urinalysis = data["urinalysis"],
           state.HBSag = data["HBSag"]
           
@@ -58,6 +58,24 @@ export default new Vuex.Store({
         doNotning({state},data){
           state.stdnum = data;
           console.log(data); /* eslint-disable-line no-console */
+        },
+        clearInfo(state){
+          state.socketMessage = '',
+          state.fname = '',
+          state.lname = '',
+          state.mname = '',
+          state.course = '',
+          state.year = '',
+          state.gender = '',
+          state.date = '',
+          state.daterel = '',
+          state.prc = '',
+          state.xray = '',
+          state.drug = '',
+          state.stdnum = '',
+          state.urinalysis = '',
+          state.bloodtyping = '',
+          state.HBSag = ''
         }
       },
       actions:{
