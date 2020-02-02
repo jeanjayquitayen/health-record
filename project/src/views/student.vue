@@ -6,7 +6,11 @@
                 :drugtest="drug"
                 :urinalysis="urinalysis"
                 :bloodtest="bloodtyping"
-                :HBSag="HBSag"></container>
+                :HBSag="HBSag"
+                :v1="v1"
+                :v2="v2"
+                :v3="v3"
+                :vd="VaccinationDate"></container>
 </template>
 
 <script>
@@ -31,7 +35,11 @@ export default {
             "drug",
             "urinalysis",
             "bloodtyping",
-            "HBSag"
+            "HBSag",
+            "v1",
+            "v2",
+            "v3",
+            "VaccinationDate",
         ])
     },
         created(){

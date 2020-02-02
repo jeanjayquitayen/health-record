@@ -37,14 +37,28 @@
                           </v-row>
                           <v-row>
                             <v-col cols="4">
-                                      Blood Type
+                                    Blood Type
                                       <v-text-field :label="bloodtest" single-line outlined readonly></v-text-field>
-                              </v-col>
-                              <v-col cols="4">
-                                      HBsAG
+                            </v-col>
+                            <v-col cols="4">
+                                    HBsAG
                                       <v-text-field :label="HBSag" single-line outlined readonly></v-text-field>
                             </v-col>
+                            <v-col cols="4">
+                                      {{v1==""? "vaccination on:" + vds: "Vaccine-1" }}
+                                      <v-text-field :label="v1" single-line outlined readonly></v-text-field>
+                            </v-col>
                           </v-row>
+                        <v-row>
+                            <v-col cols="4">
+                                    {{v2==""? "vaccination on:"+ vd: "Vaccine-2" }}
+                                      <v-text-field :label="v2" single-line outlined readonly></v-text-field>
+                            </v-col>
+                            <v-col cols="4">
+                                    {{v3==""? "vaccination on:"+ vd: "Vaccine-3" }}
+                                      <v-text-field :label="v3" single-line outlined readonly></v-text-field>
+                            </v-col>
+                        </v-row>
                         </v-row>
                     </v-container>
             </v-card>
@@ -75,8 +89,8 @@ export default {
           'space-between',
         ],
         justify: 'center',
+        date:10
   }),
-
   props:{
       firstname: String,
       lastname: String,
@@ -85,7 +99,11 @@ export default {
       drugtest: String,
       urinalysis: String,
       bloodtest: String,
-      HBSag: String
+      HBSag: String,
+      v1: String,
+      v2: String,
+      v3: String,
+      vd: String,
   }
 };
 </script>

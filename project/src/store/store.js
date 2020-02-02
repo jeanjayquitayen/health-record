@@ -23,7 +23,11 @@ export default new Vuex.Store({
         stdnum:'',
         urinalysis:'',
         bloodtyping:'',
-        HBSag:''
+        HBSag:'',
+        v1:'',
+        v2:'',
+        v3:'',
+        VaccinationDate:''
 
 
       },
@@ -51,7 +55,11 @@ export default new Vuex.Store({
           state.stdnum = data["stdnum"],
           state.bloodtyping = data["bloodtyping"],
           state.urinalysis = data["urinalysis"],
-          state.HBSag = data["HBSag"]
+          state.HBSag = data["HBSag"],
+          state.v1 = data['1stVaccine'],
+          state.v2 = data['2ndVaccine'],
+          state.v3 = data['3rdVaccine']
+
           
 
         },
@@ -75,7 +83,11 @@ export default new Vuex.Store({
           state.stdnum = '',
           state.urinalysis = '',
           state.bloodtyping = '',
-          state.HBSag = ''
+          state.HBSag = '',
+          state.v1 = '',
+          state.v2 = '',
+          state.v3 = ''
+          state.VaccinationDate = ''
         }
       },
       actions:{
