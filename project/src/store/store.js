@@ -63,9 +63,9 @@ export default new Vuex.Store({
           
 
         },
-        doNotning({state},data){
+        doNotning(state,data){
           state.stdnum = data;
-          console.log(data); /* eslint-disable-line no-console */
+         // console.log(data); /* eslint-disable-line no-console */
         },
         clearInfo(state){
           state.socketMessage = '',
@@ -116,6 +116,11 @@ export default new Vuex.Store({
           this._vm.$socket.client.emit('findid',id);
           commit("doNotning",id);
           // console.log(id); /* eslint-disable-line no-console */
+        },
+        update_result({commit},results){
+          console.log(results); /* eslint-disable-line no-console */
+          commit("doNotning",results.dtest)
+          this._vm.$socket.client.emit('updateResult',results);
         }
       },
       getters: {

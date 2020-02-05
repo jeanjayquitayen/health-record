@@ -25,6 +25,7 @@
                                 class="my-2"
                                 :items="drugresult"
                                 label="-"
+                                v-model="results.dtest"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
                             </v-col>
@@ -34,6 +35,7 @@
                                 class="my-2"
                                 :items="xray"
                                 label="-"
+                                v-model="results.xray"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
                             </v-col>
@@ -43,6 +45,7 @@
                                 class="my-2"
                                 :items="uri"
                                 label="-"
+                                v-model="results.uri"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
                             </v-col>
@@ -52,22 +55,45 @@
                                 class="my-2"
                                 :items="btype"
                                 label="-"
+                                v-model="results.btype"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
                             </v-col>
                             <v-col cols="3">
-                              Vaccine
+                              Vaccine 1
                               <v-overflow-btn
                                 class="my-2"
                                 :items="vacc"
                                 label="-"
+                                v-model="results.v1"
+                                target="#dropdown-example"
+                              ></v-overflow-btn>
+                            </v-col>
+                            <v-col cols="3">
+                              Vaccine 2
+                              <v-overflow-btn
+                                class="my-2"
+                                :items="vacc"
+                                label="-"
+                                v-model="results.v2"
+                                target="#dropdown-example"
+                              ></v-overflow-btn>
+                            </v-col>
+                            <v-col cols="3">
+                              Vaccine 3
+                              <v-overflow-btn
+                                class="my-2"
+                                :items="vacc"
+                                label="-"
+                                v-model="results.v3"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
                             </v-col>
                           </v-row>
+                          
                     </v-container>
                     <v-card-actions>
-                      <v-btn>submit</v-btn>
+                      <v-btn @click="submitForm">submit</v-btn>
                     </v-card-actions>
             </v-card>
         </v-col>
@@ -102,7 +128,16 @@ export default {
         xray: ['Done','Undone'],
         uri: ['Positive','Negative'],
         btype: ['A+','A-','B+','B-','0+','0-','AB+','AB-'],
-        vacc: ['Complete','NComplete']
+        vacc: ['Complete','NComplete'],
+        results:{
+          dtest:'',
+          xray:'',
+          uri:'',
+          btype:'',
+          v1:'',
+          v2:'',
+          v3:''
+        }
 
   }),
 
@@ -117,6 +152,10 @@ export default {
         findID(){
             // console.log(this.idnum); /* eslint-disable-li ne no-console */
             this.$store.dispatch('find_id',this.idnum);
+        },
+
+        submitForm(){
+          this.$store.dispatch('update_result',this.results);
         }
     }
 };
