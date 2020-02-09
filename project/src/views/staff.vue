@@ -1,5 +1,5 @@
 <template>
-    <staffarea :firstname="fname" ></staffarea>
+    <staffarea :firstname="fname_staff" ></staffarea>
 </template>
 
 <script>
@@ -17,8 +17,8 @@ export default {
     computed:{
         ...mapState([
             'socketMessage',
-            "fname",
-            "lname",
+            "fname_staff",
+            "lname_staff",
             "course",
             "xray",
             "drug"

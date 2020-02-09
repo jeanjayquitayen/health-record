@@ -43,7 +43,7 @@ export default {
         ])
     },
         created(){
-      setTimeout( () => this.$router.push({ path: '/'}), 5000);
+      setTimeout( () => this.$router.push({ path: '/'}), 10000);
 
     }
 }
