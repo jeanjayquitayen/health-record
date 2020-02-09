@@ -45,7 +45,7 @@ export default new Vuex.Store({
           
         },
         setInfo_student(state,data){
-          console.log(data); /* eslint-disable-line no-console */
+          // console.log(data); /* eslint-disable-line no-console */
           state.fname_student = data["firstname"],
           state.lname_student = data["lastname"],
           state.course = data["course"],

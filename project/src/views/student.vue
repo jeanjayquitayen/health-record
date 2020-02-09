@@ -1,6 +1,6 @@
 <template>
-    <container :firstname="fname" 
-                :lastname="lname" 
+    <container :firstname="fname_student" 
+                :lastname="lname_student" 
                 :course="course"
                 :xray="xray"
                 :drugtest="drug"
