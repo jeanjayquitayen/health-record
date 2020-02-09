@@ -204,6 +204,9 @@ export default {
           if (this.results.id != ''){
               this.$store.dispatch('update_result',this.results);
           }
+          else{
+            alert("Please Enter Student Number");
+          }
           
         },
         logout(){
