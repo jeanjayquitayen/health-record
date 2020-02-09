@@ -46,8 +46,8 @@ export default new Vuex.Store({
         },
         setInfo_student(state,data){
           console.log(data); /* eslint-disable-line no-console */
-          state.fname = data["firstname"],
-          state.lname = data["lastname"],
+          state.fname_student = data["firstname"],
+          state.lname_student = data["lastname"],
           state.course = data["course"],
           state.year = data["year"],
           state.gender = data["gender"],
@@ -87,9 +87,12 @@ export default new Vuex.Store({
         },
         clearInfo(state){
           state.socketMessage = '',
-          state.fname = '',
-          state.lname = '',
-          state.mname = '',
+          state.fname_student = '',
+          state.lname_student = '',
+          state.mname_student = '',
+          state.fname_staff = '',
+          state.lname_staff = '',
+          state.mname_staff = '',
           state.course = '',
           state.year = '',
           state.gender = '',
@@ -149,7 +152,7 @@ export default new Vuex.Store({
         },
         logout_staff({commit}){
           commit("clearInfo");
-          router.push('/');
+          router.push({path:'/'});
 
         }
       },
