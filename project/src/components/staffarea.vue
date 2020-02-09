@@ -161,6 +161,21 @@ export default {
         }
 
   }),
+        computed:{
+        ...mapState([
+            "fname_student",
+            "lname_student",
+            "course",
+            "xray",
+            "drug",
+            "urinalysis",
+            "bloodtyping",
+            "HBSag",
+            "v1",
+            "v2",
+            "v3"
+        ])
+    },
 
   props:{
          firstname: String,
@@ -192,21 +207,6 @@ export default {
           this.$store.dispatch('logout_staff');
 
         }
-    },
-        computed:{
-        ...mapState([
-            "fname_student",
-            "lname_student",
-            "course",
-            "xray",
-            "drug",
-            "urinalysis",
-            "bloodtyping",
-            "HBSag",
-            "v1",
-            "v2",
-            "v3",
-        ])
     }
 };
 </script>

@@ -166,10 +166,8 @@ export default new Vuex.Store({
           // console.log(id); /* eslint-disable-line no-console */
         },
         update_result({commit},results){
-          console.log(results); /* eslint-disable-line no-console */
-          commit("doNotning",results.dtest)
           this._vm.$socket.client.emit('updateResult',results);
-          commit("clearEdit");
+          // commit("clearEdit");
           alert("Updated");
         },
         logout_staff({commit}){
