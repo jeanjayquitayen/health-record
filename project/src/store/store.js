@@ -111,7 +111,7 @@ export default new Vuex.Store({
           state.VaccinationDate = '',
           state.login = false
         },
-        clearEdit(){
+        clearEdit(state){
           state.fname_student = '',
           state.lname_student = '',
           state.mname_student = '',
