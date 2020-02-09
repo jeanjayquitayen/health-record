@@ -33,9 +33,9 @@
                               X-ray
                               <v-overflow-btn
                                 class="my-2"
-                                :items="xray"
+                                :items="xrayvar"
                                 :label="xray"
-                                v-model="results.xray"
+                                v-model="results.xraytest"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
                             </v-col>
@@ -143,14 +143,14 @@ export default {
         justify: 'center',
         idnum: '',
         drugresult: ['Positive','Negative'],
-        xray: ['Done','Undone'],
+        xrayvar: ['Done','Undone'],
         uri: ['Positive','Negative'],
         btype: ['A+','A-','B+','B-','0+','0-','AB+','AB-'],
         vacc: ['Complete','NComplete'],
         hbsag:['Positive','Negative'],
         results:{
           dtest:'',
-          xray:'',
+          xraytest:'',
           uri:'',
           btype:'',
           v1:'',
@@ -194,7 +194,7 @@ export default {
         submitForm(){
           this.results.id = this.stdnum;
           if(this.results.dtest == '') {this.results.dtest = this.drug;}
-          if(this.results.xray == '') {this.results.xray = this.xray;}
+          if(this.results.xraytest == '') {this.results.xraytest = this.xray;}
           if(this.results.uri == '') {this.results.uri = this.urinalysis;}
           if(this.results.btype == '') {this.results.btype = this.bloodtyping;}
           if(this.results.v1 == '') {this.results.v1 = this.v1;}
