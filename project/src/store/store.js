@@ -9,9 +9,12 @@ export default new Vuex.Store({
     state: {
         // flavor: ''
         socketMessage:'',
-        fname:'',
-        lname:'',
-        mname:'',
+        fname_student:'',
+        lname_student:'',
+        mname_student:'',
+        fname_staff:'',
+        lname_staff:'',
+        mname_staff:'',
         course:'',
         year:'',
         gender:'',
@@ -40,7 +43,7 @@ export default new Vuex.Store({
           console.log(state.socketMessage); /* eslint-disable-line no-console */
           
         },
-        setInfo(state,data){
+        setInfo_student(state,data){
           console.log(data); /* eslint-disable-line no-console */
           state.fname = data["firstname"],
           state.lname = data["lastname"],
@@ -49,6 +52,20 @@ export default new Vuex.Store({
           state.gender = data["gender"],
           state.date = data["date"],
           state.daterel = data["daterel"],
+          state.xray = data["xray"],
+          state.drug = data["drugtest"],
+          state.stdnum = data["stdnum"],
+          state.bloodtyping = data["bloodtyping"],
+          state.urinalysis = data["urinalysis"],
+          state.HBSag = data["HBSag"],
+          state.v1 = data['1stVaccine'],
+          state.v2 = data['2ndVaccine'],
+          state.v3 = data['3rdVaccine']
+        },
+        setInfo_staff(state,data){
+          console.log(data); /* eslint-disable-line no-console */
+          state.fname_staff = data["firstname"],
+          state.lname_staff = data["lastname"],
           state.prc = data["prc"],
           state.xray = data["xray"],
           state.drug = data["drugtest"],
@@ -60,9 +77,8 @@ export default new Vuex.Store({
           state.v2 = data['2ndVaccine'],
           state.v3 = data['3rdVaccine']
 
-          
-
         },
+
         doNotning(state,data){
           state.stdnum = data;
          // console.log(data); /* eslint-disable-line no-console */
@@ -86,7 +102,7 @@ export default new Vuex.Store({
           state.HBSag = '',
           state.v1 = '',
           state.v2 = '',
-          state.v3 = ''
+          state.v3 = '',
           state.VaccinationDate = ''
         }
       },
@@ -99,12 +115,12 @@ export default new Vuex.Store({
           // }
         },
         socket_serverData({commit},data){
-          commit('setInfo',data);
+          
           if(this.state.prc == ''){
-            
+            commit('setInfo_student',data);
             router.push('/student');
           }else{
-
+              commit('setInfo_staff',data);
               router.push('/staff');
 
             
