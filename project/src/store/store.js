@@ -30,7 +30,8 @@ export default new Vuex.Store({
         v1:'',
         v2:'',
         v3:'',
-        VaccinationDate:''
+        VaccinationDate:'',
+        login: false
 
 
       },
@@ -64,6 +65,7 @@ export default new Vuex.Store({
         },
         setInfo_staff(state,data){
           console.log(data); /* eslint-disable-line no-console */
+          state.login = true;
           state.fname_staff = data["firstname"],
           state.lname_staff = data["lastname"],
           state.prc = data["prc"],
@@ -75,7 +77,7 @@ export default new Vuex.Store({
           state.HBSag = data["HBSag"],
           state.v1 = data['1stVaccine'],
           state.v2 = data['2ndVaccine'],
-          state.v3 = data['3rdVaccine']
+          state.v3 = data['3rdVaccine'],
 
         },
 
@@ -103,7 +105,8 @@ export default new Vuex.Store({
           state.v1 = '',
           state.v2 = '',
           state.v3 = '',
-          state.VaccinationDate = ''
+          state.VaccinationDate = '',
+          state.login = false
         }
       },
       actions:{
@@ -115,13 +118,12 @@ export default new Vuex.Store({
           // }
         },
         socket_serverData({commit},data){
-          if(this.state.prc == ''){
-            commit('setInfo_student',data);
-          }
-          if(this.state.prc == ''){
+
+          if(data['prc'] == null && this.state.prc == '' && this.state.login == false){
             commit('setInfo_student',data);
             router.push('/student');
           }else{
+              
               commit('setInfo_staff',data);
               router.push('/staff');
 
