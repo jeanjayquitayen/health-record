@@ -24,7 +24,7 @@
                               <v-overflow-btn
                                 class="my-2"
                                 :items="drugresult"
-                                label="drug"
+                                :label="drug"
                                 v-model="results.dtest"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
@@ -34,7 +34,7 @@
                               <v-overflow-btn
                                 class="my-2"
                                 :items="xray"
-                                label="xray"
+                                :label="xray"
                                 v-model="results.xray"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
@@ -44,7 +44,7 @@
                               <v-overflow-btn
                                 class="my-2"
                                 :items="uri"
-                                label="urinalysis"
+                                :label="urinalysis"
                                 v-model="results.uri"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
@@ -54,7 +54,7 @@
                               <v-overflow-btn
                                 class="my-2"
                                 :items="btype"
-                                label="bloodtyping"
+                                :label="bloodtyping"
                                 v-model="results.btype"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
@@ -64,7 +64,7 @@
                               <v-overflow-btn
                                 class="my-2"
                                 :items="vacc"
-                                label="v1"
+                                :label="v1"
                                 v-model="results.v1"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
@@ -74,7 +74,7 @@
                               <v-overflow-btn
                                 class="my-2"
                                 :items="vacc"
-                                label="v2"
+                                :label="v2"
                                 v-model="results.v2"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
@@ -84,7 +84,7 @@
                               <v-overflow-btn
                                 class="my-2"
                                 :items="vacc"
-                                label="v3"
+                                :label="v3"
                                 v-model="results.v3"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
@@ -94,7 +94,7 @@
                               <v-overflow-btn
                                 class="my-2"
                                 :items="hbsag"
-                                label="-"
+                                :label="HBSag"
                                 v-model="results.hbsag"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
