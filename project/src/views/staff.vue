@@ -16,12 +16,8 @@ export default {
     components:{ staffarea },
     computed:{
         ...mapState([
-            'socketMessage',
             "fname_staff",
             "lname_staff",
-            "course",
-            "xray",
-            "drug"
         ])
     }
 }

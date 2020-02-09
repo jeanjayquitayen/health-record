@@ -17,7 +17,7 @@
                               <v-text-field v-model="idnum" v-on:keyup.enter="findID" single-line outlined></v-text-field>
                           </v-col>
                       </v-row>
-                      Name: {{ firstname }} {{ lastname }} {{ course }}
+                      Name: {{ fname_student }} {{ lname_student }} {{ course }}
                       <v-row>
                             <v-col cols="3">
                               Drug Test
@@ -113,6 +113,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'DefaultPage',
 
@@ -158,7 +159,7 @@ export default {
   props:{
          firstname: String,
          lastname: String,
-         course: String,
+        //  course: String,
     //   xray: String,
     //   drug: String
   },
@@ -172,6 +173,13 @@ export default {
           this.results.id = this.idnum;
           this.$store.dispatch('update_result',this.results);
         }
+    },
+        computed:{
+        ...mapState([
+            "fname_student",
+            "lname_student",
+            "course"
+        ])
     }
 };
 </script>
