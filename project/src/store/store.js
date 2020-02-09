@@ -115,7 +115,9 @@ export default new Vuex.Store({
           // }
         },
         socket_serverData({commit},data){
-          
+          if(this.state.prc == ''){
+            commit('setInfo_student',data);
+          }
           if(this.state.prc == ''){
             commit('setInfo_student',data);
             router.push('/student');
