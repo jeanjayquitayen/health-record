@@ -146,6 +146,11 @@ export default new Vuex.Store({
           commit("doNotning",results.dtest)
           this._vm.$socket.client.emit('updateResult',results);
           alert("Updated");
+        },
+        logout_staff({commit}){
+          commit("clearInfo");
+          router.push('/');
+
         }
       },
       getters: {

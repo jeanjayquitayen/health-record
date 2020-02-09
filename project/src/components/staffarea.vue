@@ -104,8 +104,14 @@
                           
                     </v-container>
                     <v-card-actions>
-                      <v-btn @click="submitForm">submit</v-btn>
+
+                    <v-row>
+                    <v-btn @click="submitForm">submit</v-btn>
+                    <v-btn @click="logout">logout</v-btn>
+                    </v-row>
+  
                     </v-card-actions>
+
             </v-card>
         </v-col>
     </v-row>
@@ -172,6 +178,10 @@ export default {
         submitForm(){
           this.results.id = this.idnum;
           this.$store.dispatch('update_result',this.results);
+        },
+        logout(){
+          this.$store.dispatch('logout_staff');
+
         }
     },
         computed:{
