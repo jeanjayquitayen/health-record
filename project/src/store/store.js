@@ -59,9 +59,9 @@ export default new Vuex.Store({
           state.bloodtyping = data["bloodtyping"],
           state.urinalysis = data["urinalysis"],
           state.HBSag = data["HBSag"],
-          state.v1 = data['1stVaccine'],
-          state.v2 = data['2ndVaccine'],
-          state.v3 = data['3rdVaccine']
+          state.v1 = data['Vaccine1'],
+          state.v2 = data['Vaccine2'],
+          state.v3 = data['Vaccine3']
         },
         setInfo_staff(state,data){
           console.log(data); /* eslint-disable-line no-console */
@@ -75,9 +75,9 @@ export default new Vuex.Store({
           state.bloodtyping = data["bloodtyping"],
           state.urinalysis = data["urinalysis"],
           state.HBSag = data["HBSag"],
-          state.v1 = data['1stVaccine'],
-          state.v2 = data['2ndVaccine'],
-          state.v3 = data['3rdVaccine']
+          state.v1 = data['Vaccine1'],
+          state.v2 = data['Vaccine2'],
+          state.v3 = data['Vaccine3']
 
         },
 
@@ -110,6 +110,27 @@ export default new Vuex.Store({
           state.v3 = '',
           state.VaccinationDate = '',
           state.login = false
+        },
+        clearEdit(){
+          state.fname_student = '',
+          state.lname_student = '',
+          state.mname_student = '',
+          state.course = '',
+          state.year = '',
+          state.gender = '',
+          state.date = '',
+          state.daterel = '',
+          state.prc = '',
+          state.xray = '',
+          state.drug = '',
+          state.stdnum = '',
+          state.urinalysis = '',
+          state.bloodtyping = '',
+          state.HBSag = '',
+          state.v1 = '',
+          state.v2 = '',
+          state.v3 = '',
+          state.VaccinationDate = ''
         }
       },
       actions:{
@@ -124,11 +145,11 @@ export default new Vuex.Store({
 
           if(data['prc'] == null && this.state.prc == '' && this.state.login == false){
             commit('setInfo_student',data);
-            router.push('/student');
+            router.push({path: '/student'});
           }else if (this.state.login == false){
               
               commit('setInfo_staff',data);
-              router.push('/staff');  
+              router.push({path: '/staff'});  
           }
           else{
             commit('setInfo_student',data);
@@ -148,6 +169,7 @@ export default new Vuex.Store({
           console.log(results); /* eslint-disable-line no-console */
           commit("doNotning",results.dtest)
           this._vm.$socket.client.emit('updateResult',results);
+          commit("clearEdit");
           alert("Updated");
         },
         logout_staff({commit}){
