@@ -88,6 +88,17 @@
                                 v-model="results.v3"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
+                              </v-col>
+                              <v-col cols="3">
+                              HBSag
+                              <v-overflow-btn
+                                class="my-2"
+                                :items="hbsag"
+                                label="-"
+                                v-model="results.hbsag"
+                                target="#dropdown-example"
+                              ></v-overflow-btn>
+                              
                             </v-col>
                           </v-row>
                           
@@ -129,6 +140,7 @@ export default {
         uri: ['Positive','Negative'],
         btype: ['A+','A-','B+','B-','0+','0-','AB+','AB-'],
         vacc: ['Complete','NComplete'],
+        hbsag:['Positive','Negative'],
         results:{
           dtest:'',
           xray:'',
@@ -136,7 +148,9 @@ export default {
           btype:'',
           v1:'',
           v2:'',
-          v3:''
+          v3:'',
+          hbsag:'',
+          id:'',
         }
 
   }),
@@ -155,6 +169,7 @@ export default {
         },
 
         submitForm(){
+          this.results.id = this.idnum;
           this.$store.dispatch('update_result',this.results);
         }
     }
