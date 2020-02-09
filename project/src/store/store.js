@@ -100,11 +100,14 @@ export default new Vuex.Store({
         },
         socket_serverData({commit},data){
           commit('setInfo',data);
-          if(data['prc'] == undefined | this.state.prc == ''){
+          if(this.state.prc == ''){
             
             router.push('/student');
           }else{
-            router.push('/staff');
+
+              router.push('/staff');
+
+            
           }
           
         },
