@@ -77,7 +77,7 @@ export default new Vuex.Store({
           state.HBSag = data["HBSag"],
           state.v1 = data['1stVaccine'],
           state.v2 = data['2ndVaccine'],
-          state.v3 = data['3rdVaccine'],
+          state.v3 = data['3rdVaccine']
 
         },
 
@@ -122,12 +122,13 @@ export default new Vuex.Store({
           if(data['prc'] == null && this.state.prc == '' && this.state.login == false){
             commit('setInfo_student',data);
             router.push('/student');
-          }else{
+          }else if (this.state.login == false){
               
               commit('setInfo_staff',data);
-              router.push('/staff');
-
-            
+              router.push('/staff');  
+          }
+          else{
+            commit('setInfo_student',data);
           }
           
         },
