@@ -28,8 +28,8 @@ export default {
     computed:{
         ...mapState([
             'socketMessage',
-            "fname",
-            "lname",
+            "fname_student",
+            "lname_student",
             "course",
             "xray",
             "drug",
