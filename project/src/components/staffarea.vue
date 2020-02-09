@@ -192,14 +192,14 @@ export default {
 
         submitForm(){
           this.results.id = this.idnum;
-          if(this.results.dtest == '') this.results.dtest = this.drug;
-          if(this.results.xray == '') this.results.xray = this.xray;
-          if(this.results.uri == '') this.results.uri = this.urinalysis;
-          if(this.results.btype == '') this.results.btype = this.bloodtyping;
-          if(this.results.v1 == '') this.results.v1 = this.v1;
-          if(this.results.v2 == '') this.results.v2 = this.v2;
-          if(this.results.v3 == '') this.results.v3 = this.v3;
-          if(this.results.hbsag == '') this.results.hbsag = this.HBSag;
+          if(this.results.dtest == '') {this.results.dtest = this.drug;}
+          if(this.results.xray == '') {this.results.xray = this.xray;}
+          if(this.results.uri == '') {this.results.uri = this.urinalysis;}
+          if(this.results.btype == '') {this.results.btype = this.bloodtyping;}
+          if(this.results.v1 == '') {this.results.v1 = this.v1;}
+          if(this.results.v2 == '') {this.results.v2 = this.v2;}
+          if(this.results.v3 == '') {this.results.v3 = this.v3;}
+          if(this.results.hbsag == '') {this.results.hbsag = this.HBSag;}
 
           this.$store.dispatch('update_result',this.results);
         },
