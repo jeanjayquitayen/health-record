@@ -215,16 +215,15 @@ export default {
           v1:'',
           v2:'',
           v3:'',
-          v1date:'',
-          v2date:'',
-          v3date:'',
           hbsag:'',
           id:'',
         },
         date: new Date().toISOString().substr(0, 10),
         modal: false,
         vacs: 'red',
-        
+        v1date:'',
+        v2date:'',
+        v3date:'',
 
   }),
         computed:{
