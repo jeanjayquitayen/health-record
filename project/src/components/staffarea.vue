@@ -269,7 +269,7 @@ export default {
           if(this.results.btype == '') {this.results.btype = this.bloodtyping;}
           if(this.results.hbsag == '') {this.results.hbsag = this.HBSag;}
 
-          if(this.results.v1 == '' && this.v1 != '' && this.v1 != this.vacc[1] && this.v1 != null) {
+          if(this.results.v1 == '' && this.v1 != '' && this.v1 != this.vacc[1] && this.v1 != null && this.v1date == null | this.v1date == '') {
             this.results.v1 = this.v1;
             }else if (this.v1date != null && this.v1date != ''){
               this.results.v1 = this.v1date;
@@ -277,7 +277,7 @@ export default {
               this.results.v1 = this.vacc[1];
             }
 
-          if(this.results.v2 == '' && this.v2 != '' && this.v2 != this.vacc[1] && this.v2 != null){
+          if(this.results.v2 == '' && this.v2 != '' && this.v2 != this.vacc[1] && this.v2 != null  && this.v2date == null | this.v2date == ''){
             this.results.v2 = this.v2;
             }else if (this.v2date != null && this.v2date != ''){
               this.results.v2 = this.v2date;
@@ -285,7 +285,7 @@ export default {
               this.results.v2 = this.vacc[1];
             }
 
-          if(this.results.v3 == '' && this.v3 != '' && this.v3 != this.vacc[1] && this.v3 != null){
+          if(this.results.v3 == '' && this.v3 != '' && this.v3 != this.vacc[1] && this.v3 != null && this.v3date == null | this.v3date == ''){
             this.results.v3 = this.v3;
             }else if (this.v3date != null && this.v3date != ''){
               this.results.v3 = this.v3date;
