@@ -271,7 +271,7 @@ export default {
 
           if(this.results.v1 == '' && this.v1 != '' && this.v1 != this.vacc[1] && this.v1 != null) {
             this.results.v1 = this.v1;
-            }else if (this.v1date != null | this.v1date != ''){
+            }else if (this.v1date != null && this.v1date != ''){
               this.results.v1 = this.v1date;
             }else if(this.results.v1 != this.vacc[0]){
               this.results.v1 = this.vacc[1];
@@ -281,17 +281,17 @@ export default {
 
           if(this.results.v2 == '' && this.v2 != '' && this.v2 != this.vacc[1] && this.v2 != null){
             this.results.v2 = this.v2;
-            }else if (this.v2date != null | this.v2date != ''){
+            }else if (this.v2date != null && this.v2date != ''){
               this.results.v2 = this.v2date;
             }else if(this.results.v2 != this.vacc[0]){
               this.results.v2 = this.vacc[1];
             }else{
               alert("Failed");
             }
-            
+
           if(this.results.v3 == '' && this.v3 != '' && this.v3 != this.vacc[1] && this.v3 != null){
             this.results.v3 = this.v3;
-            }else if (this.v3date != null | this.v3date != ''){
+            }else if (this.v3date != null && this.v3date != ''){
               this.results.v3 = this.v3date;
             }else if(this.results.v3 != this.vacc[0]){
               this.results.v3 = this.vacc[1];
