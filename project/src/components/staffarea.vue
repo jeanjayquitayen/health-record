@@ -268,26 +268,27 @@ export default {
           if(this.results.uri == '') {this.results.uri = this.urinalysis;}
           if(this.results.btype == '') {this.results.btype = this.bloodtyping;}
           if(this.results.hbsag == '') {this.results.hbsag = this.HBSag;}
+
           if(this.results.v1 == '' && this.v1 != '' && this.v1 != this.vacc[1]) {
             this.results.v1 = this.v1;
-            }else if (this.results.v1 == this.vacc[1] | this.v1 != '' | this.v1 == this.vacc[1]){
+            }else if (this.v1date != null){
               this.results.v1 = this.v1date;
-            }else{
+            }else if(this.results.v1 != this.vacc[0]){
               this.results.v1 = this.vacc[1];
             }
 
           if(this.results.v2 == '' && this.v2 != '' && this.v2 != this.vacc[1]){
             this.results.v2 = this.v2;
-            }else if (this.results.v2 == this.vacc[1] | this.v2 != '' | this.v2 == this.vacc[1]){
+            }else if (this.v2date != null){
               this.results.v2 = this.v2date;
-            }else{
+            }else if(this.results.v2 != this.vacc[0]){
               this.results.v2 = this.vacc[1];
             }
           if(this.results.v3 == '' && this.v3 != '' && this.v3 != this.vacc[1]){
             this.results.v3 = this.v3;
             }else if (this.results.v3 == this.vacc[1] | this.v3 != '' | this.v3 == this.vacc[1]){
               this.results.v3 = this.v3date;
-            }else{
+            }else if(this.results.v3 != this.vacc[0]){
               this.results.v3 = this.vacc[1];
             }
 
