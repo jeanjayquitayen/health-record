@@ -270,18 +270,18 @@ export default {
           if(this.results.hbsag == '') {this.results.hbsag = this.HBSag;}
           if(this.results.v1 == '' && this.v1 != '' && this.v1 != this.vacc[1]) {
             this.results.v1 = this.v1;
-            }else if (this.results.v1 == this.vacc[1] | this.v1 != ''){
+            }else if (this.results.v1 == this.vacc[1] | this.v1 != '' | this.v1 == this.vacc[1]){
               this.results.v1 = this.v1date;
             }
 
           if(this.results.v2 == '' && this.v2 != '' && this.v2 != this.vacc[1]){
             this.results.v2 = this.v2;
-            }else if (this.results.v2 == this.vacc[1] | this.v2 != ''){
+            }else if (this.results.v2 == this.vacc[1] | this.v2 != '' | this.v2 == this.vacc[1]){
               this.results.v2 = this.v2date;
             }
           if(this.results.v3 == '' && this.v3 != '' && this.v3 != this.vacc[1]){
             this.results.v3 = this.v3;
-            }else if (this.results.v3 == this.vacc[1] | this.v3 != ''){
+            }else if (this.results.v3 == this.vacc[1] | this.v3 != '' | this.v3 == this.vacc[1]){
               this.results.v3 = this.v3date;
             }
 
