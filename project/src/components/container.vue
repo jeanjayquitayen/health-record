@@ -45,17 +45,17 @@
                                       <v-text-field :label="HBSag" single-line outlined readonly></v-text-field>
                             </v-col>
                             <v-col cols="4">
-                                      {{v1==""? "vaccination on:" + vds: "Vaccine-1" }}
+                                      Vaccine-1
                                       <v-text-field :label="v1" single-line outlined readonly></v-text-field>
                             </v-col>
                           </v-row>
                         <v-row>
                             <v-col cols="4">
-                                    {{v2==""? "vaccination on:"+ vd: "Vaccine-2" }}
+                                      Vaccine-2
                                       <v-text-field :label="v2" single-line outlined readonly></v-text-field>
                             </v-col>
                             <v-col cols="4">
-                                    {{v3==""? "vaccination on:"+ vd: "Vaccine-3" }}
+                                      Vaccine-3
                                       <v-text-field :label="v3" single-line outlined readonly></v-text-field>
                             </v-col>
                         </v-row>

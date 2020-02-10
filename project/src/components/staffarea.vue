@@ -98,13 +98,71 @@
                                 v-model="results.hbsag"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
-                              
                             </v-col>
                           </v-row>
-                          
+
+                          <v-row>
+                            <v-col cols="12" sm="6" md="6">
+                                <v-radio-group v-model="vacs" column>
+                                  <v-row>
+                                    <v-col>          
+                                    <v-radio
+                                    label="Vaccine 1"
+                                    color="red"
+                                    value="red"
+                                    @mousedown="vacs = 'red', date = v1date"
+                                    ></v-radio>
+                                  </v-col>
+                                    <v-col>
+                                      <v-radio
+                                      label="Vaccine 2"
+                                      color="orange"
+                                      value="orange"
+                                      @mousedown="vacs = 'orange', date = v2date"
+                                      ></v-radio>
+                                    </v-col>
+                                    <v-col>
+                                    <v-radio
+                                    label="Vaccine 3"
+                                    color="primary"
+                                    value="primary"
+                                    @mousedown=" vacs = 'primary', date = v3date"
+                                    ></v-radio>
+                                    </v-col>
+                                  </v-row>
+
+                              </v-radio-group>
+                              </v-col>
+                          </v-row>
+
+        <v-row>
+          <v-col cols="12" sm="6" md="4">
+            <v-dialog
+              ref="dialog"
+              v-model="modal"
+              :return-value.sync="date"
+              persistent
+              width="290px"
+            >
+            <template v-slot:activator="{ on }">
+              <v-text-field
+                v-model="date"
+                label="Vaccination Schedule"
+                prepend-icon="event"
+                readonly
+                v-on="on"
+              ></v-text-field>
+            </template>
+              <v-date-picker v-model="date" scrollable>
+                <v-spacer></v-spacer>
+                <v-btn text color="primary" @click="modal = false">Cancel</v-btn>
+                <v-btn text color="primary" @click="saveDate(date)">OK</v-btn>
+              </v-date-picker>
+          </v-dialog>
+        </v-col>
+      </v-row>
                     </v-container>
                     <v-card-actions>
-
                     <v-row>
                     <v-btn @click="submitForm">submit</v-btn>
                     <v-btn @click="logout">logout</v-btn>
@@ -119,6 +177,7 @@
 </template>
 
 <script>
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import { mapState } from 'vuex'
 export default {
   name: 'DefaultPage',
@@ -156,9 +215,16 @@ export default {
           v1:'',
           v2:'',
           v3:'',
+          v1date:'',
+          v2date:'',
+          v3date:'',
           hbsag:'',
           id:'',
-        }
+        },
+        date: new Date().toISOString().substr(0, 10),
+        modal: false,
+        vacs: 'red',
+        
 
   }),
         computed:{
@@ -177,6 +243,11 @@ export default {
             "stdnum"
         ])
     },
+  // created(){
+  //     this.results.v1date = this.date;
+  //     this.results.v2date = this.date;
+
+  // },
 
   props:{
          firstname: String,
@@ -197,10 +268,26 @@ export default {
           if(this.results.xraytest == '') {this.results.xraytest = this.xray;}
           if(this.results.uri == '') {this.results.uri = this.urinalysis;}
           if(this.results.btype == '') {this.results.btype = this.bloodtyping;}
-          if(this.results.v1 == '') {this.results.v1 = this.v1;}
-          if(this.results.v2 == '') {this.results.v2 = this.v2;}
-          if(this.results.v3 == '') {this.results.v3 = this.v3;}
           if(this.results.hbsag == '') {this.results.hbsag = this.HBSag;}
+          if(this.results.v1 == '' && this.v1 != '') {
+            this.results.v1 = this.v1;
+            }else if (this.results.v1 == this.vacc[1]){
+              this.results.v1 = this.v1date;
+            }
+
+          if(this.results.v2 == '' && this.v2 != ''){
+            this.results.v2 = this.v2;
+            }else if (this.results.v2 == this.vacc[1]){
+              this.results.v2 = this.v2date;
+            }
+          if(this.results.v3 == '' && this.v3 != ''){
+            this.results.v3 = this.v3;
+            }else if (this.results.v3 == this.vacc[1]){
+              this.results.v3 = this.v3date;
+            }
+
+
+
           if (this.results.id != ''){
               this.$store.dispatch('update_result',this.results);
           }
@@ -212,7 +299,25 @@ export default {
         logout(){
           this.$store.dispatch('logout_staff');
 
+        },
+        saveDate(date){
+          let set_date = "";
+          if (this.vacs == "red"){
+            this.v1date = date;
+            set_date = this.v1date;
+          }else if (this.vacs == "orange"){
+            this.v2date = date;
+            set_date = this.v2date;
+          }else{
+            this.v3date = date;
+            set_date = this.v3date;
+          }
+          this.showDate(set_date);
+         
+        },
+        showDate(date){
+            this.$refs.dialog.save(date);
         }
-    }
+    },
 };
 </script>
