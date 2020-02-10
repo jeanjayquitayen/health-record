@@ -275,6 +275,8 @@ export default {
               this.results.v1 = this.v1date;
             }else if(this.results.v1 != this.vacc[0]){
               this.results.v1 = this.vacc[1];
+            }else{
+              alert("Failed");
             }
 
           if(this.results.v2 == '' && this.v2 != '' && this.v2 != this.vacc[1]){
