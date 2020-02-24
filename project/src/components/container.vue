@@ -30,17 +30,17 @@
                                     Drug Test
                                     <v-text-field :label="drugtest" single-line outlined readonly></v-text-field>
                             </v-col>
-                            <v-col cols="4">
+                            <!-- <v-col cols="4">
                                     Urinalysis
                                     <v-text-field :label="urinalysis" single-line outlined readonly></v-text-field>
-                            </v-col>
+                            </v-col> -->
                           </v-row>
                           <v-row>
-                            <v-col cols="4">
+                            <!-- <v-col cols="4">
                                     Blood Type
                                       <v-text-field :label="bloodtest" single-line outlined readonly></v-text-field>
                             </v-col>
-                            <v-col cols="4">
+                            <v-col cols="4"> -->
                                     HBsAG
                                       <v-text-field :label="HBSag" single-line outlined readonly></v-text-field>
                             </v-col>
