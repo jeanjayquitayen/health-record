@@ -9,6 +9,7 @@ export default {
     components: {defaultpage},
     created(){
             this.$store.dispatch('contact_server');
+
         },
 
     
