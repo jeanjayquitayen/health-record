@@ -144,12 +144,26 @@ export default new Vuex.Store({
         socket_serverData({commit},data){
 
           if(data['prc'] == null && this.state.prc == '' && this.state.login == false){
-            commit('setInfo_student',data);
-            router.push({path: '/login'});
+            
+            let pin = prompt("Password:");
+            if(pin == data['pincode']){
+              commit('setInfo_student',data);
+              router.push({path: '/student'});
+            }else{
+              commit("clearInfo");
+              alert("Incorrect Pin")
+            }
+
+            
           }else if (this.state.login == false){
-              
-              commit('setInfo_staff',data);
-              router.push({path: '/staff'});  
+              let pin = prompt("Password:");
+              if(pin == data['pincode']){
+                commit('setInfo_staff',data);
+                router.push({path: '/staff'});
+              }else{
+                commit("clearInfo");
+                alert("Incorrect Pin")
+              }  
           }
           else{
             commit('setInfo_student',data);
