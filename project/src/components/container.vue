@@ -39,8 +39,8 @@
                             <!-- <v-col cols="4">
                                     Blood Type
                                       <v-text-field :label="bloodtest" single-line outlined readonly></v-text-field>
-                            </v-col>
-                            <v-col cols="4"> -->
+                            </v-col> -->
+                            <v-col cols="4">
                                     HBsAG
                                       <v-text-field :label="HBSag" single-line outlined readonly></v-text-field>
                             </v-col>
