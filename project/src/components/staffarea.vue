@@ -39,7 +39,7 @@
                                 target="#dropdown-example"
                               ></v-overflow-btn>
                             </v-col>
-                            <v-col cols="3">
+                            <!-- <v-col cols="3">
                               Urinalysis
                               <v-overflow-btn
                                 class="my-2"
@@ -48,8 +48,8 @@
                                 v-model="results.uri"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
-                            </v-col>
-                            <v-col cols="3">
+                            </v-col> -->
+                            <!-- <v-col cols="3">
                               Blood Type
                               <v-overflow-btn
                                 class="my-2"
@@ -58,7 +58,7 @@
                                 v-model="results.btype"
                                 target="#dropdown-example"
                               ></v-overflow-btn>
-                            </v-col>
+                            </v-col> -->
                             <v-col cols="3">
                               Vaccine 1
                               <v-overflow-btn
