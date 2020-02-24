@@ -145,7 +145,16 @@ export default new Vuex.Store({
 
           if(data['prc'] == null && this.state.prc == '' && this.state.login == false){
             
-            let pin = prompt("Pin:");
+            // let pin = prompt("Pin:");
+
+            let pin = prompt({
+              title: "PIN",
+              message: "Enter PIN",
+              okButtonText: "OK",
+              cancelButtonText: "Cancel",
+              // defaultText: "****",
+              inputType: dialogs.inputType.password
+            })
             if(pin == data['pin']){
               commit('setInfo_student',data);
               router.push({path: '/student'});
@@ -156,7 +165,15 @@ export default new Vuex.Store({
 
             
           }else if (this.state.login == false){
-              let pin = prompt("Pin:");
+              
+            let pin = prompt({
+              title: "PIN",
+              message: "Enter PIN",
+              okButtonText: "OK",
+              cancelButtonText: "Cancel",
+              // defaultText: "****",
+              inputType: dialogs.inputType.password
+            })
               if(pin == data['pin']){
                 commit('setInfo_staff',data);
                 router.push({path: '/staff'});
