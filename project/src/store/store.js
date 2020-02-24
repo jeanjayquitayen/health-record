@@ -146,7 +146,7 @@ export default new Vuex.Store({
           if(data['prc'] == null && this.state.prc == '' && this.state.login == false){
             
             let pin = prompt("Password:");
-            if(pin == data['pincode']){
+            if(pin == data['pin']){
               commit('setInfo_student',data);
               router.push({path: '/student'});
             }else{
@@ -157,7 +157,7 @@ export default new Vuex.Store({
             
           }else if (this.state.login == false){
               let pin = prompt("Password:");
-              if(pin == data['pincode']){
+              if(pin == data['pin']){
                 commit('setInfo_staff',data);
                 router.push({path: '/staff'});
               }else{
