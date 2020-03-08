@@ -52,7 +52,7 @@ import { mapState } from 'vuex'
         },
 
         created(){
-            // setTimeout( () => this.$router.push({ path: '/'}), 10000);
+            setTimeout( () => this.$router.push({ path: '/'}), 15000);
         },
         methods: {
             login() {
