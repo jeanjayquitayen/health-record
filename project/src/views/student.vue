@@ -46,9 +46,8 @@ export default {
         created(){
         if (this.login == false){
             this.$router.push({ path: '/login'}) 
-        }else{
-            setTimeout( () => this.$router.push({ path: '/login'}), 10000);
         }
+        setTimeout( () => this.$router.push({ path: '/'}), 10000);
     },
 }
 </script>
