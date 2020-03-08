@@ -31,14 +31,17 @@ export default new Vuex.Store({
         v2:'',
         v3:'',
         VaccinationDate:'',
-        login: false
+        login: false,
+        pin: null,
+        user:'',
+        connected:'',
 
 
       },
       mutations: {
-        // change(state, flavor) {
-        //   state.flavor = flavorstudent
-        // }
+        setLogin(state,status){
+          state.login = status;
+        },
         setSocketMessage(state){
           state.socketMessage = "Connected";
           console.log(state.socketMessage); /* eslint-disable-line no-console */
@@ -61,7 +64,9 @@ export default new Vuex.Store({
           state.HBSag = data["HBSag"],
           state.v1 = data['Vaccine1'],
           state.v2 = data['Vaccine2'],
-          state.v3 = data['Vaccine3']
+          state.v3 = data['Vaccine3'],
+          state.pin = data['pin'],
+          state.user = "student"
         },
         setInfo_staff(state,data){
           console.log(data); /* eslint-disable-line no-console */
@@ -77,7 +82,10 @@ export default new Vuex.Store({
           state.HBSag = data["HBSag"],
           state.v1 = data['Vaccine1'],
           state.v2 = data['Vaccine2'],
-          state.v3 = data['Vaccine3']
+          state.v3 = data['Vaccine3'],
+          state.pin = data['pin'],
+          state.user = "staff"
+
 
         },
 
@@ -137,39 +145,15 @@ export default new Vuex.Store({
         socket_serverMessage({commit},message){
           commit('setSocketMessage');
           console.log(message); /* eslint-disable-line no-console */
-          // if(message == 'ok'){
-          //   router.push('/student')
-          // }
         },
         socket_serverData({commit},data){
-
-          if(data['prc'] == null && this.state.prc == '' && this.state.login == false){
+          if(data['prc'] == null && this.state.prc == ''){
+            commit('setInfo_student',data);
+            router.push({path: '/student'});
             
-            // let pin = prompt("Pin:");
-
-            let pin = prompt("ENTER PIN:");
-            if(pin == data['pin']){
-              commit('setInfo_student',data);
-              router.push({path: '/student'});
-            }else{
-              commit("clearInfo");
-              alert("Incorrect Pin")
-            }
-
-            
-          }else if (this.state.login == false){
-              
-            let pin = prompt("ENTER PIN:");
-              if(pin == data['pin']){
+          }else{
                 commit('setInfo_staff',data);
                 router.push({path: '/staff'});
-              }else{
-                commit("clearInfo");
-                alert("Incorrect Pin")
-              }  
-          }
-          else{
-            commit('setInfo_student',data);
           }
           
         },
@@ -193,7 +177,10 @@ export default new Vuex.Store({
           commit("clearInfo");
           router.push({path:'/'});
 
-        }
+        },
+        allow_login({commit},status){
+          commit('setLogin',status);
+        },
       },
       getters: {
         // flavor: state => state.flavor

@@ -18,7 +18,13 @@ export default {
         ...mapState([
             "fname_staff",
             "lname_staff",
+            "login"
         ])
+    },
+    created(){
+    if (this.login == false){
+            this.$router.push({ path: '/login'}) 
+        }
     }
 }
 </script>

@@ -4,13 +4,18 @@
 
 <script>
 import defaultpage from "../components/DefaultPage"
+// import { mapState } from 'vuex'
 export default {
     name: "Home",
     components: {defaultpage},
-    created(){
-            this.$store.dispatch('contact_server');
-
-        },
+   //  computed:{
+   //      ...mapState([
+			// "connected"
+   //      ])
+   //  },
+	created(){
+		this.$store.dispatch('contact_server');
+	},
 
     
     

@@ -40,12 +40,18 @@ export default {
             "v2",
             "v3",
             "VaccinationDate",
+            "login"
         ])
     },
         created(){
-      setTimeout( () => this.$router.push({ path: '/'}), 10000);
+        if (this.login == false){
+            this.$router.push({ path: '/login'}) 
+        }else{
+            setTimeout( () => this.$router.push({ path: '/login'}), 10000);
+        }
+      
 
-    }
+    },
 }
 </script>
 

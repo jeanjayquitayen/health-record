@@ -6,13 +6,8 @@
         <ValidationObserver ref="observer" v-slot="{ invalid }">
             <form @submit.prevent="onSubmit">
 
-                <validation-provider name="uname" rules="required" v-slot="{ errors }">
-                    <v-text-field  v-model="username" placeholder="username" name="Uname" type="text" />
-                    <span>{{ errors[0] }}</span>
-                </validation-provider>
-
                 <validation-provider name="pass" rules="required" v-slot="{ errors }">
-                    <v-text-field  v-model="password" placeholder="password" name="Password" type="text" />
+                    <v-text-field v-model="password" placeholder="pin" name="Password" type="password" />
                     <span>{{ errors[0] }}</span>
                 </validation-provider>
 
@@ -31,74 +26,50 @@
 
 <script>
 
-// import { mapState } from 'vuex'
+import { mapState } from 'vuex'
 // import { mapGetters } from 'vuex'
 
     export default {
         name: 'Login',
 
         computed:{
-            // ...mapState([
-            //         'authenticated',
-            //         'msg',
-            //         'profile',
-            //         'adminauthenticated'
+            ...mapState([
+                    'pin',
+                    'user'
                     
-            //     ]),
-            //      ...mapGetters([
-            //         'getName'
-            //     ]),
+                ]),
+                //  ...mapGetters([
+                //     'getName'
+                // ]),
     },
         data() {
             return {
                 
-                    username: "",
                     password: ""
             
                 
             }
         },
 
-        mounted(){
-            // this.$validator.localize('en', this.dictionary)
+        created(){
+            setTimeout( () => this.$router.push({ path: '/'}), 5000);
         },
         methods: {
             login() {
+                if(this.pin == this.password){
+                    console.log("login"); /* eslint-disable-line no-console */
+                    if(this.user == 'student'){
+                        this.$router.push({ path: '/student'})
+                    }else if(this.user == 'staff'){
+                        this.$router.push({ path: '/staff'})
+                    }
+                    this.$store.dispatch('allow_login',true);
 
-                alert("Not Yet Implemented")
-                // this.$validator.validateAll().then(result=>{
-
-                // if(result) {
-                //     this.$store.dispatch('loadCoins',[this.username,this.password])
-                //     .then(()=>{
-                //     setTimeout(()=>{
-                //     if(this.authenticated) {
-                //         this.$router.replace({ name: "faculty" });
-                //     } 
-                //     else if(this.adminauthenticated){
-                //                 this.$router.replace({ name: "admin" });
-                //         }
-
-
-                //         else {
-                //         console.log("The username and / or password is incorrect"); /* eslint-disable-line no-console */
-                //     }},100);
-                //     })
-   
-
-                // } else {
-                //     console.log("A username and password must be present"); /* eslint-disable-line no-console */
-                // }
-
-
-
-
-                // });
-
+                }else{
+                    alert("WRONG PIN");
+                }
+                }
             },
-
-        }
-        
 }
 </script>
 
