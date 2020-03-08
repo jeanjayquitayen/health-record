@@ -155,9 +155,12 @@ export default new Vuex.Store({
             if(data['prc'] == null && this.state.prc == ''){
             commit('setInfo_student',data);
             router.push({path: '/student'});
-            }else{
+            }else if(data['prc'] != null & this.state.prc == ''){
               commit('setInfo_staff',data);
               router.push({path: '/staff'});
+            }else{
+              commit('setInfo_student',data);
+              router.push({path: '/student'});
             }
 
           
