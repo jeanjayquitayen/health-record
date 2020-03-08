@@ -139,7 +139,7 @@ export default new Vuex.Store({
           state.v1 = '',
           state.v2 = '',
           state.v3 = '',
-          state.VaccinationDate = '',
+          state.VaccinationDate = ''
           // state.login = false,
           // state.pin= null,
           // state.user='',
@@ -152,14 +152,14 @@ export default new Vuex.Store({
           console.log(message); /* eslint-disable-line no-console */
         },
         socket_serverData({commit},data){
-          if(data['prc'] == null && this.state.prc == ''){
+            if(data['prc'] == null && this.state.prc == ''){
             commit('setInfo_student',data);
             router.push({path: '/student'});
-            
-          }else{
-                commit('setInfo_staff',data);
-                router.push({path: '/staff'});
-          }
+            }else{
+              commit('setInfo_staff',data);
+              router.push({path: '/staff'});
+            }
+
           
         },
         contact_server({commit}){
