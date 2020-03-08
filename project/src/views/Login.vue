@@ -53,8 +53,8 @@ import { mapState } from 'vuex'
         },
 
         created(){
-            clearTimeout(this.time_id);
-            this.time_id = setTimeout( () => this.$router.push({ path: '/'}), 15000);
+            // clearTimeout(this.time_id);
+            // this.time_id = setTimeout( () => this.$router.push({ path: '/'}), 15000);
         },
         methods: {
             login() {
@@ -63,15 +63,14 @@ import { mapState } from 'vuex'
                     this.$store.dispatch('allow_login');
                     console.log("login"); /* eslint-disable-line no-console */
                     if(this.user == 'student'){
-                        clearTimeout(this.time_id);
                         this.$router.push({ path: '/student'})
                     }else if(this.user == 'staff'){
-                        clearTimeout(this.time_id);
                         this.$router.push({ path: '/staff'})
                     }
                     
                 }else{
                     alert("WRONG PIN");
+                    this.$router.push({ path: '/'})
                 }
                 }
             },
