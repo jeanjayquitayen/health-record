@@ -152,7 +152,7 @@ export default new Vuex.Store({
           console.log(message); /* eslint-disable-line no-console */
         },
         socket_serverData({commit},data){
-            if(data['prc'] == null && this.state.prc == ''){
+            if(data['prc'] == null && this.state.prc == '' && this.state.user == ''){
             commit('setInfo_student',data);
             router.push({path: '/student'});
             }else if(data['prc'] != null & this.state.prc == ''){
