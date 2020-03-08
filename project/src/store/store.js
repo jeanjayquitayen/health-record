@@ -140,10 +140,10 @@ export default new Vuex.Store({
           state.v2 = '',
           state.v3 = '',
           state.VaccinationDate = '',
-          state.login = false,
-          state.pin= null,
-          state.user='',
-          state.connected=''
+          // state.login = false,
+          // state.pin= null,
+          // state.user='',
+          // state.connected=''
         }
       },
       actions:{

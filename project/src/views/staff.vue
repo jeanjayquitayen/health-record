@@ -6,7 +6,7 @@
 import { mapState } from 'vuex'
 import staffarea from "../components/staffarea"
 export default {
-    name: "students",
+    name: "staff",
     data(){
         return{
 
