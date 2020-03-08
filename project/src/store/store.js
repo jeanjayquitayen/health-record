@@ -160,7 +160,6 @@ export default new Vuex.Store({
               router.push({path: '/staff'});
             }else{
               commit('setInfo_student',data);
-              router.push({path: '/student'});
             }
 
           
