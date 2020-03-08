@@ -57,7 +57,7 @@ import { mapState } from 'vuex'
         methods: {
             login() {
                 if(this.pin == this.password){
-                    this.$store.dispatch('allow_login',true);
+                    this.$store.dispatch('allow_login');
                     console.log("login"); /* eslint-disable-line no-console */
                     if(this.user == 'student'){
                         this.$router.push({ path: '/student'})

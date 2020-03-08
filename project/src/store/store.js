@@ -39,8 +39,8 @@ export default new Vuex.Store({
 
       },
       mutations: {
-        setLogin(state,status){
-          state.login = status;
+        setLogin(state){
+          state.login = true;
         },
         setSocketMessage(state){
           state.socketMessage = "Connected";
@@ -139,7 +139,11 @@ export default new Vuex.Store({
           state.v1 = '',
           state.v2 = '',
           state.v3 = '',
-          state.VaccinationDate = ''
+          state.VaccinationDate = '',
+          state.login = false,
+          state.pin= null,
+          state.user='',
+          state.connected=''
         }
       },
       actions:{
@@ -180,8 +184,8 @@ export default new Vuex.Store({
           router.push({path:'/'});
 
         },
-        allow_login({commit},status){
-          commit('setLogin',status);
+        allow_login({commit}){
+          commit('setLogin');
         },
       },
       getters: {
