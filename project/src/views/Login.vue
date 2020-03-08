@@ -53,8 +53,8 @@ import { mapState } from 'vuex'
         },
 
         created(){
-            // clearTimeout(this.time_id);
-            // this.time_id = setTimeout( () => this.$router.push({ path: '/'}), 15000);
+            clearTimeout(this.time_id);
+            this.time_id = setTimeout( () => this.$router.push({ path: '/'}), 15000);
         },
         methods: {
             login() {
