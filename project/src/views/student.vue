@@ -46,10 +46,10 @@ export default {
     },
         created(){
 
-            if (this.login == false){
-                this.$router.push({ path: '/login'}) 
-            }
-            clearTimeout(this.time_id);
+            // if (this.login == false){
+            //     this.$router.push({ path: '/login'}) 
+            // }
+            // clearTimeout(this.time_id);
             this.time_id =  setTimeout( () => this.$router.push({ path: '/'}), 10000);
     },
 }
