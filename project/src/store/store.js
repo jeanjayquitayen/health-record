@@ -66,7 +66,7 @@ export default new Vuex.Store({
           state.v2 = data['Vaccine2'],
           state.v3 = data['Vaccine3'],
           state.pin = data['pin'],
-          state.user = "student"
+          state.user = "student",
         },
         setInfo_staff(state,data){
           console.log(data); /* eslint-disable-line no-console */
@@ -117,7 +117,10 @@ export default new Vuex.Store({
           state.v2 = '',
           state.v3 = '',
           state.VaccinationDate = '',
-          state.login = false
+          state.login = false,
+          state.pin: null,
+          state.user:'',
+          state.connected:'',
         },
         clearEdit(state){
           state.fname_student = '',
@@ -158,6 +161,7 @@ export default new Vuex.Store({
           
         },
         contact_server(){
+          commit('clearInfo');
           this._vm.$socket.client.emit('confirmConnection');
           console.log("contact_server"); /* eslint-disable-line no-console */
         },
