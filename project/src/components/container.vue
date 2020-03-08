@@ -2,7 +2,7 @@
   <v-container>
     <v-row align="center" justify="center">
         <v-col>
-            <v-card class="mx-auto" max-width="800">
+            <v-card color='green' class="mx-auto" max-width="800">
                     <v-container>
                         <v-row class="ma-4">
                           <v-row>
